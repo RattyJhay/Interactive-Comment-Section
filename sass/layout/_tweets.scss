@@ -1,0 +1,160 @@
+@use "../abstract" as *;
+@use "../base" as *;
+
+.container {
+  padding-top: 1rem;
+
+  @media (min-width: $breakpoints-medium) {
+    margin-inline: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+svg {
+  cursor: pointer;
+  fill: $Light-grayish-blue;
+}
+
+svg:hover {
+  fill: $Moderate-blue;
+}
+
+.inline-block {
+  display: flex;
+  border: none;
+  font-weight: $Weights-large;
+  color: $Moderate-blue;
+}
+
+.reply-button {
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+
+  svg {
+    fill: rgb(84, 87, 182);
+    margin-right: 0.5rem;
+  }
+}
+
+.reply-button:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.desktop--reaction {
+  display: none;
+  @media (min-width: $breakpoints-medium) {
+    display: flex;
+    background-color: $Very-light-gray;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    margin-inline: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    span {
+      margin: 1rem 0;
+    }
+
+    img {
+      width: 0.85rem;
+      cursor: pointer;
+
+      :hover {
+        color: black;
+      }
+    }
+  }
+}
+
+.comment-block-container {
+  background-color: $White;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0.6rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: min(100% - 32px, 700px);
+  margin-inline: auto;
+
+  @media (min-width: $breakpoints-medium) {
+    display: flex;
+  }
+
+  .comment-body {
+    color: $Grayish-Blue;
+    font-weight: $Weights-small;
+
+    .profile-details {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 2rem;
+      }
+
+      div {
+        margin-inline: 1rem;
+        display: inline-block;
+
+        .profile-name {
+          font-weight: $Weights-medium;
+          color: $Dark-blue;
+        }
+
+        .date {
+          margin-left: 0.6rem;
+        }
+      }
+
+      .reply--header {
+        display: none;
+
+        @media (min-width: $breakpoints-medium) {
+          display: flex;
+          margin-left: 12.42rem;
+
+          img {
+            width: 1.5rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    p {
+      font-weight: $Weights-small;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    @media (min-width: $breakpoints-medium) {
+      display: none;
+    }
+
+    .likes-button {
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      background-color: $Very-light-gray;
+      span {
+        margin-inline: 1.2rem;
+      }
+
+      img {
+        width: 0.85rem;
+        cursor: pointer;
+
+        :hover {
+          background-color: $Moderate-blue;
+        }
+      }
+    }
+  }
+}

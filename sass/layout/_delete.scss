@@ -1,0 +1,79 @@
+@use "../abstract" as *;
+@use "../base" as *;
+
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+
+  .popup {
+    border-radius: 0.7rem;
+    background-color: $White;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem 1.95rem;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.95);
+
+    .delete--text {
+      margin-bottom: 1.1rem;
+      color: $Grayish-Blue;
+      h1 {
+        margin-bottom: 1rem;
+        color: $Dark-blue;
+        font-size: 1.25rem;
+      }
+    }
+
+    .delete--btn {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        padding: 0.8rem 1.9rem;
+        font-weight: $Weights-medium;
+        color: $White;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .cancel-btn {
+        background-color: $Grayish-Blue;
+      }
+
+      .delete-btn {
+        background-color: $Soft-Red;
+      }
+
+      button:hover {
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.popup-box,
+.popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+.popup-box.active,
+.popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-box.show .popup {
+  transform: translate(-50%, -50%) scale(1);
+}

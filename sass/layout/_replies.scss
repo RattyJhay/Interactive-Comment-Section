@@ -1,0 +1,122 @@
+@use "../abstract" as *;
+@use "../base" as *;
+
+.reply-container {
+  margin-left: 1.9375rem;
+  border-left: 2px solid rgb(234, 236, 241);
+
+  @media (min-width: $breakpoints-medium) {
+    margin-inline: auto;
+    width: min(100%, 625px);
+  }
+}
+
+.name--tag {
+  font-weight: $Weights-large;
+  color: $Moderate-blue;
+}
+
+.reply--wrapper {
+  @media (min-width: $breakpoints-medium) {
+    margin-left: 2.1875rem;
+    padding-right: 3.1875rem;
+    width: min(100%, 635px);
+  }
+}
+
+.reply-button-div {
+  margin-left: auto;
+  margin-right: -2.2rem;
+
+  svg {
+    margin-right: -0.2rem;
+  }
+}
+
+.reply--body {
+  flex-direction: column;
+
+  .reply--header {
+    display: flex;
+    align-items: center;
+    // margin-bottom: 1rem;
+    display: flex;
+
+    img {
+      width: 2rem;
+      margin-right: 0.9rem;
+    }
+
+    .username {
+      font-weight: $Weights-medium;
+      color: $Dark-blue;
+    }
+
+    .date {
+      margin-left: 0.55rem;
+      color: $Grayish-Blue;
+
+      @media (min-width: $breakpoints-medium) {
+        margin-left: 0.7rem;
+      }
+    }
+
+    .reply-button {
+      display: none;
+      cursor: pointer;
+
+      @media (min-width: $breakpoints-medium) {
+        display: flex;
+
+        svg {
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.reply--content {
+  overflow-wrap: break-word;
+  color: rgb(103, 114, 126);
+  line-height: 1.5;
+}
+
+.reply--footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  @media (min-width: $breakpoints-medium) {
+    display: none;
+  }
+
+  .likes-button {
+    align-items: center;
+    background-color: transparent;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    background-color: $Very-light-gray;
+
+    svg {
+      cursor: pointer;
+    }
+
+    span {
+      margin-inline: 1.2rem;
+    }
+  }
+
+  .reply-button {
+    cursor: pointer;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 26.5625em) {
+      padding: 1rem;
+    }
+  }
+}

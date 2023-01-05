@@ -1,0 +1,31 @@
+@use "../abstract" as *;
+@use "../base" as *;
+
+.you--attribute {
+  margin-left: 0.7rem;
+  padding-inline: 0.5rem;
+  background-color: $Moderate-blue;
+  color: $White;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.delete {
+  margin-right: -3.9rem;
+
+  span {
+    color: $Soft-Red;
+  }
+
+  svg {
+    fill: $Soft-Red;
+  }
+}
+
+.edit--footer {
+  display: flex;
+
+  .delete {
+    margin-right: 0;
+  }
+}

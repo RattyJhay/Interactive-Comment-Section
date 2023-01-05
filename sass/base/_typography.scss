@@ -1,0 +1,21 @@
+@use "../abstract" as *;
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  font-size: $fs-paragraph;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
